@@ -8,18 +8,33 @@
     <!-- StyleSheet -->
     <link href="css/main.css" rel="stylesheet">
 </head>
-    <body>
-        <div ng-view>
-        
+
+<body>
+    <div ng-controller="mainPageCtrl">
+
+        <div style="height: 305px">
+            <carousel interval="1500">
+                <slide ng-repeat="slide in slides" active="slide.active">
+                    <img ng-src="{{slide.image}}" style="margin:auto;">
+                    <div class="carousel-caption">
+                        <p>{{slide.text}}</p>
+                    </div>
+                </slide>
+            </carousel>
         </div>
-        
-        
-        <!-- Required Javascript libraries -->
-        <script type="text/javascript" src="js/libs/angular.js"></script>
-        <script type="text/javascript" src="js/libs/ui-bootstrap.js"></script>
-        <script type="text/javascript" src="js/libs/jquery.min.js"></script>
-        <script type="text/javascript" src="js/libs/angular-route.min.js"></script>
-        <!-- Actual javascript file -->
-        <script type="text/javascript" src="js/app.js" ></script>
-    </body>
+
+        <!-- input spot for different tabs on website. single page app -->
+        <div ng-view>
+        </div>
+
+    </div>
+    <!-- Required Javascript libraries -->
+    <script type="text/javascript" src="js/libs/angular.js"></script>
+    <script type="text/javascript" src="js/libs/ui-bootstrap.js"></script>
+    <script type="text/javascript" src="js/libs/jquery.min.js"></script>
+    <script type="text/javascript" src="js/libs/angular-route.min.js"></script>
+    <!-- Actual javascript file -->
+    <script type="text/javascript" src="js/app.js"></script>
+</body>
+
 </html>
