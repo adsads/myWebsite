@@ -52,3 +52,30 @@ app.controller('aboutPageCtrl', ['$scope',
 
 
     }]);
+
+app.controller('contactPageCtrl', ['$scope',
+    function ($scope) {
+
+
+        $scope.words = "I am a contact page";
+
+
+    }]);
+
+app.controller('coursePageCtrl', ['$scope',
+    function ($scope) {
+
+
+        $scope.words = "I am a course page";
+
+
+    }]);
+
+app.controller('projectPageCtrl', ['$scope',
+    function ($scope) {
+
+
+        $scope.words = "I am a project page";
+
+
+    }]);
