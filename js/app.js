@@ -11,24 +11,29 @@ app.config(['$routeProvider',
             templateUrl: 'partials/about.html',
             controller: 'aboutPageCtrl'
         }).
+        when('/contact', {
+            templateUrl: 'partials/contact.html',
+            controller: 'contactPageCtrl'
+        }).
+        when('/courses', {
+            templateUrl: 'partials/courses.html',
+            controller: 'coursePageCtrl'
+        }).
+        when('/projects', {
+            templateUrl: 'partials/projects.html',
+            controller: 'projectPageCtrl'
+        }).
         otherwise({
             redirectTo: '/'
         });
 }]);
 
-app.controller('mainPageCtrl', ['$scope',
-    function ($scope) {
-        var slides = $scope.slides = [];
-
-        slides.push({
-            image: 'https://fbcdn-sphotos-f-a.akamaihd.net/hphotos-ak-xpa1/v/t1.0-9/9287_806314672733122_6720519754104971586_n.jpg?oh=02e7e2a8497987a6beee98a1c59d6520&oe=5484590B&__gda__=1418571474_c109f9ce2ff0ee1beb1a6ffb9c27ac79',
-            text: 'My First Picture'
-        });
-
-        slides.push({
-            image: 'https://fbcdn-sphotos-b-a.akamaihd.net/hphotos-ak-xap1/v/t1.0-9/10612761_806314569399799_8668823446257359798_n.jpg?oh=689c4c002e4017dcd6784d0ee5393663&oe=5498F796&__gda__=1418239818_ed33789efe54ce22968d4e7e1d4e2149',
-            text: 'My second Picture'
-        });
+app.controller('mainPageCtrl', ['$scope', '$location',
+    function ($scope, $location) {
+        $scope.isActive = function (viewLocation) {
+            var active = (viewLocation === $location.path());
+            return active;
+        };
 
     }]);
 
