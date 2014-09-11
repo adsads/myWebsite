@@ -1,8 +1,14 @@
 body {
-    background-color: #EEEEEE;
-    width: 80%;
-    margin: auto;
+	background-color: #EEEEEE;
+	width: 80%;
+	margin: auto;
 }
 html {
-    background-color: #FFFFFF;
+	background-color: #FFFFFF;
+}
+map,
+div[map] {
+	display: block;
+	width: 200px;
+	height: 200px;
 }
